@@ -11,6 +11,7 @@ const PresentationSection = () => {
       </div>
       <div className="flex justify-center items-center">
         <Image
+          className="hover:animate-pulse"
           src={'/homeNoAuth/iconArrowDown.svg'}
           alt={'arrowDown'}
           width={46.66}
