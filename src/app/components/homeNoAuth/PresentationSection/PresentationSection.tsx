@@ -1,6 +1,6 @@
-import ButtomGeneric from '@/components/Common/ButtomGeneric/ButtomGeneric';
 import Image from 'next/image';
 import { FiArrowRight } from 'react-icons/fi';
+import ButtomGeneric from '../../Common/ButtonGeneric/ButtonGeneric';
 
 const PresentationSection = () => {
   return (

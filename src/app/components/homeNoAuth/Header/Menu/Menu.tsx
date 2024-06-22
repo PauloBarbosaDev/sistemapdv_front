@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FiUser } from 'react-icons/fi';
 import styles from './menu.module.scss';
-import ButtomGeneric from '@/components/Common/ButtomGeneric/ButtomGeneric';
+import ButtomGeneric from '@/app/components/Common/ButtonGeneric/ButtonGeneric';
 
 const Menu = () => {
   return (

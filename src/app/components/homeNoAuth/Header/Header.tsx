@@ -1,4 +1,4 @@
-import LogoGeneric from '@/components/Common/LogoGeneric/LogoGeneric';
+import LogoGeneric from '../../Common/LogoGeneric/LogoGeneric';
 import Menu from './Menu/Menu';
 
 const Header = () => {
