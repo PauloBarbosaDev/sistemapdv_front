@@ -1,0 +1,11 @@
+$primary-color: #1e30d8;
+$light-base: #f2f3ff;
+$dark-blue: #133758;
+$white-color: #ffffff;
+
+:root {
+  --light-base: #{$light-base};
+  --dark-blue: #{$dark-blue};
+  --primary-color: #{$primary-color};
+  --white-color: #{$white-color};
+}
