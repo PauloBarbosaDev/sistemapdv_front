@@ -4,7 +4,7 @@ const FeatureSection = () => {
   return (
     <>
       <section className="flex flex-col p-[12.5rem] items-center justify-center gap-28">
-        <p className="text-title font-bold text-darkBlue w-[48.938rem]">
+        <p className="text-title font-bold text-darkBlue w-[48.938rem] text-center leading-[3.5rem]">
           Descubra como o PSistemaPDV pode impulsionar o seu negócio!
         </p>
         <div className=" text-center flex items-center justify-center gap-11 ">
