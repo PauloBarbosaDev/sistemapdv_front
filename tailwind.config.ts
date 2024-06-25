@@ -23,7 +23,7 @@ const config: Config = {
       },
       fontSize: {
         title: '3rem',
-        subTitle: '1.5rem',
+        title2: '2.25rem',
         paragraph1: '1.5rem',
         paragraph2: '1.25rem',
         paragraph3: '1rem',
