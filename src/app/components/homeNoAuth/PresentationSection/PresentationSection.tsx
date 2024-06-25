@@ -5,10 +5,10 @@ import SectionContent from './SectionContent/SectionContent';
 const PresentationSection = () => {
   return (
     <>
-      <div className="flex justify-around items-center ">
+      <section className="flex justify-around items-center">
         <SectionContent />
         <PresentationImage />
-      </div>
+      </section>
       <div className="flex justify-center items-center">
         <Image
           className="hover:animate-pulse"
