@@ -3,7 +3,7 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const SectionContent = () => {
   return (
-    <section>
+    <div>
       <div className="flex flex-col p-4 gap-9">
         <p className="text-title w-[39rem] text-left font-bold text-darkBlue leading-[3.563rem]">
           Potencialize sua experiência de compra com nosso novo{' '}
@@ -39,7 +39,7 @@ const SectionContent = () => {
           icon={FiArrowRight}
         />
       </div>
-    </section>
+    </div>
   );
 };
 
