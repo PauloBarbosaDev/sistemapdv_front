@@ -25,7 +25,7 @@ const CardGeneric = ({
 }: props) => {
   return (
     <div
-      className="flex flex-col items-center justify-center bg-lightBase shadow-custom"
+      className="flex flex-col items-center justify-center bg-lightBase shadow-custom transform transition-transform duration-300 ease-in-out hover:-translate-y-2"
       style={{
         width: `${width}rem`,
         height: `${height}rem`,
