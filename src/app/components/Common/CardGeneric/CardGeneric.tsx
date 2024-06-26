@@ -4,23 +4,42 @@ interface props {
   imageLink: string;
   imageAlt: string;
   title: string;
-  description: string;
+  description: React.ReactNode;
+  width: number;
+  height: number;
+  imageClasses: string;
+  titleClasses: string;
+  descriptionClasses: string;
 }
 
-const CardGeneric = ({ imageLink, imageAlt, title, description }: props) => {
+const CardGeneric = ({
+  imageLink,
+  imageAlt,
+  title,
+  description,
+  width,
+  height,
+  imageClasses,
+  titleClasses,
+  descriptionClasses,
+}: props) => {
   return (
-    <div className="flex flex-col items-center justify-center w-[19.813rem] h-[25.5rem] bg-lightBase shadow-custom ">
+    <div
+      className="flex flex-col items-center justify-center bg-lightBase shadow-custom"
+      style={{
+        width: `${width}rem`,
+        height: `${height}rem`,
+      }}
+    >
       <Image
         src={imageLink}
         alt={imageAlt}
         width={87.15}
         height={80}
-        className="p-t[3.25rem] pb-10 "
+        className={`${imageClasses}`}
       />
-      <p className="text-subTitle font-bold text-darkBlue pb-5">{title}</p>
-      <p className="text-paragraph2 text-darkBlue w-[16.272rem]">
-        {description}
-      </p>
+      <p className={`${titleClasses}`}>{title}</p>
+      <p className={`${descriptionClasses}`}>{description}</p>
     </div>
   );
 };
