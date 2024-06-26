@@ -1,51 +1,13 @@
-import LogoGeneric from '../../Common/LogoGeneric/LogoGeneric';
-import FooterIcons from './FooterIcons/FooterIcons';
-import FooterList from './FooterList/FooterList';
+import FooterBottom from './FooterBottom/FooterBottom';
+import FooterMain from './FooterMain/FooterMain';
 
 const Footer = () => {
   return (
     <>
-      <footer className="flex justify-around items-center bg-lightBase min-h-[26.313rem] ">
-        <div className="flex flex-col gap-8">
-          <LogoGeneric />
-          <p className="text-title leading-[3.5rem] text-darkBlue w-[31.125rem] font-bold">
-            Vamos transformar seu negócio?
-          </p>
-          <FooterIcons />
-        </div>
-        <div className="flex gap-[6.25rem]">
-          <FooterList
-            title="PsistemaPDV"
-            items={[
-              'Acessar Sistema',
-              'Teste Grátis',
-              'Sobre nós',
-              'Trabalhe Conosco',
-              'Planos e Preços',
-              'Blog',
-            ]}
-          />
-          <FooterList
-            title="Funcionalidades"
-            items={[
-              'Cadastro de Usuários',
-              'Cadastro de Produtos',
-              'Cadastro de Categorias',
-              'Controle de Estoque',
-              'Cadastro de Vendas',
-              'Relatórios',
-            ]}
-          />
-        </div>
+      <footer>
+        <FooterMain />
+        <FooterBottom />
       </footer>
-      <div className="bg-lightBase pb-5">
-        <p className="text-center font-semibold text-darkBlue text-sm">
-          Website created By{' '}
-          <span className="text-primaryColor font-bold text-sm">
-            Paulo Barbosa
-          </span>
-        </p>
-      </div>
     </>
   );
 };
