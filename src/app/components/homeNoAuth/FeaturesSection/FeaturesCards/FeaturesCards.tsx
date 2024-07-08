@@ -2,7 +2,7 @@ import CardGeneric from '../../../Common/CardGeneric/CardGeneric';
 
 const FeaturesCards = () => {
   return (
-    <div className=" text-center flex items-center justify-center gap-11 ">
+    <div className="text-center flex items-center justify-center gap-11 flex-wrap lg:flex-nowrap ">
       <CardGeneric
         imageLink="/homeNoAuth/icons8-em-alta.svg"
         imageAlt="icone-em-alta"
