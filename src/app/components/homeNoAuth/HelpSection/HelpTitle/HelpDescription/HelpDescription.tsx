@@ -1,6 +1,6 @@
 const HelpDescription = () => {
   return (
-    <p className="w-[37.25rem] text-darkBlue">
+    <p className="text-xl w-[26rem] sm:w-[37.25rem] text-darkBlue leading-7">
       <span className="font-bold">
         {' '}
         Nosso suporte está disponível 24 horas por dia para oferecer assistência
