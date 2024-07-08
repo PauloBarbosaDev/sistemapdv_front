@@ -5,7 +5,7 @@ import SectionContent from './SectionContent/SectionContent';
 const PresentationSection = () => {
   return (
     <>
-      <section className="flex justify-around items-center">
+      <section className="flex justify-around items-center p-2">
         <SectionContent />
         <PresentationImage />
       </section>
@@ -14,8 +14,8 @@ const PresentationSection = () => {
           className="hover:animate-pulse"
           src={'/homeNoAuth/iconArrowDown.svg'}
           alt={'arrowDown'}
-          width={46.66}
-          height={25.08}
+          width={44}
+          height={20}
         />
       </div>
     </>
