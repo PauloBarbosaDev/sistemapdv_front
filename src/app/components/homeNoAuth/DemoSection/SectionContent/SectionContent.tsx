@@ -4,11 +4,11 @@ const SectionContent = () => {
   return (
     <div>
       <div className="flex flex-col p-4 gap-9">
-        <p className="text-title2 w-[40.688rem] text-left font-bold leading-[2.925rem]">
+        <p className="text-3xl max-w-xs sm:text-4xl sm:max-w-2xl text-left font-bold md:leading-tight ">
           Assista ao vídeo e descubra como nosso novo Sistema PDV aprimora sua
           experiência de compra!
         </p>
-        <p className="text-paragraph2  w-[40.625rem] leading-7">
+        <p className="text-xl max-w-[40.625rem] leading-7 text-left">
           Descubra nosso sistema PDV em ação! Assista a uma demonstração
           envolvente que destaca os recursos essenciais para impulsionar seu
           negócio. Veja como nossa solução simplifica suas operações de vendas.
@@ -18,12 +18,10 @@ const SectionContent = () => {
         <ButtomGeneric
           target="/login"
           content="TESTE GRÁTIS"
-          width={11.688}
-          height={4.063}
           color="var(--dark-blue)"
           bgColor="var(--light-base)"
           bdColor="var(--primary-color)"
-          ftSize={1.25}
+          ftSize={1.125}
         />
       </div>
     </div>
