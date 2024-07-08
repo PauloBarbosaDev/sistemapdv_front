@@ -2,7 +2,7 @@ import CardGeneric from '../../../Common/CardGeneric/CardGeneric';
 
 const HelpCards = () => {
   return (
-    <div className=" w-[58.75rem] h-[33rem] flex flex-wrap items-center justify-center gap-[3.25rem]">
+    <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-14">
       <CardGeneric
         imageLink="/homeNoAuth/icons8-marcador.svg"
         imageAlt="icone-marcador"
