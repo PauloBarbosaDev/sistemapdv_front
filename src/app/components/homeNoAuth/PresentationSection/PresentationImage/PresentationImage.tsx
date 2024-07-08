@@ -8,6 +8,8 @@ const PresentationImage = () => {
         alt={'Imagem de apresentação'}
         width={493.18}
         height={486}
+        priority
+        className="hidden lg:block"
       ></Image>
     </div>
   );
