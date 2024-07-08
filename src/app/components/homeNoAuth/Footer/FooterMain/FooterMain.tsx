@@ -7,12 +7,12 @@ const FooterMain = () => {
     <div className="flex justify-around items-center bg-lightBase min-h-[26.313rem]">
       <div className="flex flex-col gap-8">
         <LogoGeneric />
-        <p className="text-title leading-[3.5rem] text-darkBlue w-[31.125rem] font-bold">
+        <p className="text-4xl max-w-sm sm:text-5xl sm:max-w-lg leading-[2.4rem] sm:leading-[3.563rem] text-darkBlue  font-bold">
           Vamos transformar seu negócio?
         </p>
         <FooterIcons />
       </div>
-      <div className="flex gap-[6.25rem]">
+      <div className="hidden lg:flex lg:gap-[6.25rem]">
         <FooterList
           title="PsistemaPDV"
           items={[
