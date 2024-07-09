@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const FooterIcons = () => {
   return (
-    <div className="flex gap-[1.875rem]">
+    <div className="flex space-x-3 sm:gap-[1.875rem]">
       <Image
         src="/homeNoAuth/Footer/instagram.svg"
         alt="icon-instagram"
