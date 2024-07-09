@@ -9,7 +9,7 @@ const PresentationSection = () => {
         <SectionContent />
         <PresentationImage />
       </section>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center pt-4 sm:p-0">
         <Image
           className="hover:animate-pulse"
           src={'/homeNoAuth/iconArrowDown.svg'}
