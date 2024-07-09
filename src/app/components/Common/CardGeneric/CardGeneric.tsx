@@ -5,11 +5,10 @@ interface props {
   imageAlt: string;
   title: string;
   description: React.ReactNode;
-  width: number;
-  height: number;
   imageClasses: string;
   titleClasses: string;
   descriptionClasses: string;
+  containerClasses?: string;
 }
 
 const CardGeneric = ({
@@ -17,19 +16,14 @@ const CardGeneric = ({
   imageAlt,
   title,
   description,
-  width,
-  height,
   imageClasses,
   titleClasses,
   descriptionClasses,
+  containerClasses = '',
 }: props) => {
   return (
     <div
-      className="flex flex-col items-center justify-center bg-lightBase shadow-custom transform transition-transform duration-300 ease-in-out hover:-translate-y-2"
-      style={{
-        width: `${width}rem`,
-        height: `${height}rem`,
-      }}
+      className={`flex flex-col items-center justify-center bg-lightBase shadow-custom transform transition-transform duration-300 ease-in-out hover:-translate-y-2 ${containerClasses}`}
     >
       <Image
         src={imageLink}
