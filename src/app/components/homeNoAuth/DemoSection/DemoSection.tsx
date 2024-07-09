@@ -11,7 +11,7 @@ const DemoSection = () => {
           color="var(--white-color)"
         />
       </div>
-      <div className="flex justify-around items-center pt-[6.25rem] flex-wrap-reverse gap-9">
+      <div className="flex justify-around items-center pt-4 sm:pt-[6.25rem] flex-wrap-reverse gap-9">
         <DemoVideo />
         <SectionContent />
       </div>
