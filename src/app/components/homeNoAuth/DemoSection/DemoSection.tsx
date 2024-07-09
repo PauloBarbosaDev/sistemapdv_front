@@ -4,7 +4,7 @@ import SectionContent from './SectionContent/SectionContent';
 
 const DemoSection = () => {
   return (
-    <section className="flex flex-col p-14 bg-darkBlue text-white">
+    <section className="flex flex-col p-16 bg-darkBlue text-white">
       <div className="flex items-center justify-center">
         <TitleGeneric
           content="Transforme seu Negócio com Nossa Avançada Solução PDV Integrada"
