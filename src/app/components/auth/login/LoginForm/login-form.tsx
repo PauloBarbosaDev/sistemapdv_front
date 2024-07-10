@@ -1,6 +1,33 @@
+'use client';
+
+import authService from '@/app/services/authService';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+
 const LoginForm = () => {
+  const router = useRouter();
+  const form = useForm();
+  const handleSubmit = form.handleSubmit(async data => {
+    const { status } = await authService.login({
+      email: data.email,
+      password: data.password,
+    });
+
+    if (status === 200) {
+      router.push('/home');
+    }
+  });
+
+  useEffect(() => {
+    if (sessionStorage.getItem('sistemaPDV-token')) {
+      router.push('/home');
+    }
+  }, []);
+
   return (
     <form
+      onSubmit={handleSubmit}
       action=""
       method="post"
       className="flex flex-col gap-8 w-full max-w-[25.625rem]"
@@ -10,10 +37,11 @@ const LoginForm = () => {
           Email
         </label>
         <input
-          type="text"
-          name="email"
+          type="email"
           id="email"
+          required
           className="w-full min-h-[2.688rem] rounded-xl border-2 border-lightGrey"
+          {...form.register('email')}
         />
       </div>
       <div className="flex flex-col gap-1">
@@ -22,9 +50,9 @@ const LoginForm = () => {
         </label>
         <input
           type="password"
-          name="password"
           id="password"
           className="w-full min-h-[2.688rem] rounded-xl border-2 border-lightGrey"
+          {...form.register('password')}
         />
       </div>
       <div className="flex items-center justify-center">
