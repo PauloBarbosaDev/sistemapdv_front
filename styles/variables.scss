@@ -2,9 +2,11 @@ $primary-color: #1e30d8;
 $light-base: #f2f3ff;
 $dark-blue: #133758;
 $white-color: #ffffff;
+$dark-base: #050505;
 
 :root {
   --light-base: #{$light-base};
+  --dark-base: ${$dark-base};
   --dark-blue: #{$dark-blue};
   --primary-color: #{$primary-color};
   --white-color: #{$white-color};
