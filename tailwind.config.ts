@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         lightBase: 'var(--light-base)',
+        darkBase: 'var(--dark-base)',
         darkBlue: 'var(--dark-blue)',
         primaryColor: 'var(--primary-color)',
       },
