@@ -1,3 +1,4 @@
+import { AxiosResponse, AxiosError } from 'axios';
 import api from './api';
 
 interface RegisterParams {
@@ -12,7 +13,9 @@ interface LoginParams {
 }
 
 const authService = {
-  register: async (params: RegisterParams) => {
+  register: async (
+    params: RegisterParams
+  ): Promise<AxiosResponse | AxiosError> => {
     const res = await api.post('/auth/register', params).catch(error => {
       if (error.response.status === 400) {
         return error.response;
