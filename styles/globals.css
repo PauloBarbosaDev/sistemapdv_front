@@ -10,6 +10,11 @@
   margin: 0;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 @layer base {
   :root {
     --light-base: #f2f3ff;

@@ -1,13 +1,17 @@
 'use client';
 
 import authService from '@/app/services/authService';
-import { useRouter } from 'next/navigation';
+import { useToast } from '@/app/components/ui/use-toast';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 const LoginForm = () => {
   const router = useRouter();
   const form = useForm();
+  const { toast } = useToast();
+  const searchParams = useSearchParams();
+
   const handleSubmit = form.handleSubmit(async data => {
     const { status } = await authService.login({
       email: data.email,
@@ -16,14 +20,33 @@ const LoginForm = () => {
 
     if (status === 200) {
       router.push('/home');
+    } else {
+      toast({
+        title: 'Error',
+        description:
+          'Não foi possível realizar o login. Por favor, verifique suas credenciais e tente novamente.',
+        variant: 'destructive',
+        duration: 3000,
+      });
     }
   });
+
+  useEffect(() => {
+    const registerSucess = searchParams.get('registred');
+    if (registerSucess === 'true') {
+      toast({
+        title: 'Cadastro criado com sucesso!',
+        duration: 3000,
+        className: 'bg-green-400 text-white',
+      });
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (sessionStorage.getItem('sistemaPDV-token')) {
       router.push('/home');
     }
-  }, []);
+  }, [router]);
 
   return (
     <form
