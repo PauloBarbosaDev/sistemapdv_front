@@ -13,11 +13,11 @@ interface LoginParams {
 }
 
 const authService = {
-  register: async (
-    params: RegisterParams
-  ): Promise<AxiosResponse | AxiosError> => {
+  register: async (params: RegisterParams) => {
     const res = await api.post('/auth/register', params).catch(error => {
       if (error.response.status === 400) {
+        return error.response;
+      } else if (error.response.status === 409) {
         return error.response;
       }
 
