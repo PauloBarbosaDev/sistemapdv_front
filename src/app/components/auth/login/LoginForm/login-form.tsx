@@ -2,7 +2,7 @@
 
 import authService from '@/app/services/authService';
 import { useToast } from '@/app/components/ui/use-toast';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -10,7 +10,6 @@ const LoginForm = () => {
   const router = useRouter();
   const form = useForm();
   const { toast } = useToast();
-  const searchParams = useSearchParams();
 
   const handleSubmit = form.handleSubmit(async data => {
     const { status } = await authService.login({
@@ -30,17 +29,6 @@ const LoginForm = () => {
       });
     }
   });
-
-  useEffect(() => {
-    const registerSucess = searchParams.get('registred');
-    if (registerSucess === 'true') {
-      toast({
-        title: 'Cadastro criado com sucesso!',
-        duration: 3000,
-        className: 'bg-green-400 text-white',
-      });
-    }
-  }, [searchParams]);
 
   useEffect(() => {
     if (sessionStorage.getItem('sistemaPDV-token')) {
