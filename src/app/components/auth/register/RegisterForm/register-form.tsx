@@ -1,13 +1,16 @@
 'use client';
 
+import { useToast } from '@/app/components/ui/use-toast';
 import authService from '@/app/services/authService';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { registerStatusMessages } from '@/constant/data';
 
 const RegisterForm = () => {
   const router = useRouter();
   const form = useForm();
+  const { toast } = useToast();
 
   const handleSubmit = form.handleSubmit(async data => {
     const { status } = await authService.register({
@@ -16,8 +19,23 @@ const RegisterForm = () => {
       password: data.password,
     });
 
-    if (status === 201) {
-      router.push('/login?registred=true');
+    if (status !== undefined) {
+      const message =
+        registerStatusMessages[status as keyof typeof registerStatusMessages];
+
+      if (message) {
+        toast({
+          title: message.title,
+          description: message.description,
+          variant: message.variant,
+          duration: message.duration,
+          className: message.className,
+        });
+
+        if (status === 201) {
+          router.push('/login');
+        }
+      }
     }
   });
 

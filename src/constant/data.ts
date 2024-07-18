@@ -1,9 +1,20 @@
-export const registertatusMessages = {
+type VariantType = 'destructive' | 'default';
+
+interface StatusMessage {
+  title: string;
+  description: string;
+  variant: VariantType;
+  className?: string;
+  duration: number;
+}
+
+export const registerStatusMessages: Record<number, StatusMessage> = {
   201: {
     title: 'Sucesso',
     description:
       'Registro realizado com sucesso. Redirecionando para o login...',
     variant: 'default',
+    className: 'bg-green-400 text-white',
     duration: 3000,
   },
   409: {
