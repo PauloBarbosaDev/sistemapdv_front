@@ -23,6 +23,8 @@ const config = {
         darkBase: 'var(--dark-base)',
         darkBlue: 'var(--dark-blue)',
         primaryColor: 'var(--primary-color)',
+        grayBase: 'var(--gray-base)',
+
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

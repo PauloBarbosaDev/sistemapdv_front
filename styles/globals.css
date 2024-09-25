@@ -22,6 +22,7 @@ main {
     --dark-blue: #133758;
     --primary-color: #1e30d8;
     --white-color: #ffffff;
+    --gray-base: #cccccc;
 
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
