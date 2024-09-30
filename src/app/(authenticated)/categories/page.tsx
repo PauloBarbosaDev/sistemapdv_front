@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Loading from '@/app/components/Common/LoadingGeneric/LoadingGeneric';
 import categoryService, { CategoryType } from '@/app/services/categoryService';
 import { LucideList } from 'lucide-react';
@@ -17,11 +17,24 @@ const CategoryList = () => {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [searchValue, setSearchValue] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
 
   const fetcher = useCallback(
-    () => categoryService.getAllCategories(page, pageSize, searchValue),
-    [page, pageSize, searchValue]
+    () =>
+      categoryService.getAllCategories(
+        page,
+        pageSize,
+        searchValue,
+        startDate,
+        endDate
+      ),
+    [page, pageSize, searchValue, startDate, endDate]
   );
+
+  useEffect(() => {
+    mutate();
+  }, [startDate, endDate]);
 
   const { data, error, mutate } = useSWR(['/categories', page], fetcher);
 
@@ -75,6 +88,16 @@ const CategoryList = () => {
     mutate();
   };
 
+  const filterCategoriesByStartDateAndEndDate = (date: CategoryType) => {
+    if (!date.createdAt || !date.createdAt[0] || !date.createdAt[1]) {
+      setStartDate('');
+      setEndDate('');
+    } else {
+      setStartDate(date.createdAt[0]);
+      setEndDate(date.createdAt[1]);
+    }
+  };
+
   return (
     <section className="flex justify-center items-center p-10">
       <div className="flex-col border border-grayBase w-full">
@@ -82,6 +105,7 @@ const CategoryList = () => {
           <div className="flex justify-center items-center space-x-4">
             <LucideList width={40} height={40} />
             <p className="text-xl sm:text-2xl font-bold">LISTA DE CATEGORIAS</p>
+            {startDate}
           </div>
           <div className="flex justify-center items-center space-x-1 flex-wrap gap-1">
             <DialogCategories
@@ -91,9 +115,12 @@ const CategoryList = () => {
               onClick={category => createCategory(category)}
             />
 
-            <button type="button" className="bg-yellow-400 text-white p-3">
-              FILTRAR
-            </button>
+            <DialogCategories
+              type="FILTRAR"
+              buttonCaption="FILTRAR"
+              editDescription=""
+              onClick={date => filterCategoriesByStartDateAndEndDate(date)}
+            />
           </div>
         </div>
         <div className="bg-lightBase border-grayBase p-5 mt-3">
