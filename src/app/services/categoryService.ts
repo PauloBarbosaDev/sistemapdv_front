@@ -2,6 +2,7 @@ import api from './api';
 
 export type CategoryType = {
   description: String;
+  createdAt?: [string, string];
 };
 
 const categoryService = {
@@ -29,7 +30,7 @@ const categoryService = {
     const token = sessionStorage.getItem('sistemaPDV-token');
     const res = await api
       .get(
-        `/categories?page=${page}&pageSize=${pageSize}&name=${name}&startDate=${startDate}&endDate=${endDate}`,
+        `/categories?page=${page}&pageSize=${pageSize}&name=${name}&sourceDate=${startDate}&targetDate=${endDate}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
