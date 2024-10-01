@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   Dialog,
   DialogTrigger,
@@ -63,6 +63,9 @@ export function DialogCategories({
     } else {
       onClick({ description });
     }
+    setDescription('');
+    setStartDate('');
+    setEndDate('');
   };
 
   return (
@@ -95,7 +98,7 @@ export function DialogCategories({
 
           {type === 'FILTRAR' ? (
             <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
+              <div className="grid grid-cols-4 items-center gap-4 ">
                 <label htmlFor="startDate" className="text-right">
                   Data Inicial:
                 </label>
